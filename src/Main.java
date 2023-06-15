@@ -1,11 +1,8 @@
-import javax.sound.midi.Soundbank;
 import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
-
-import static javax.swing.text.html.HTML.Tag.U;
 
 public class Main {
     public static void main(String[] args) {
@@ -28,7 +25,7 @@ public class Main {
 
         System.out.println("--------------------------------");
 
-        //создаем объект consumer
+        //создаем объект consumer, принимающий строку с именем, и выводящий в консоль приветствие
         Consumer<String> consumer = new Consumer<String>() {
             @Override
             public void accept(String s) {
@@ -42,7 +39,8 @@ public class Main {
 
         System.out.println("--------------------------------");
 
-        //создаем объект function
+        //создаем объект function, аналогично прошлым интерфейсам
+        //FI будет принимать значения типа double, приобразовывать их в тип Long и выводить в консоль
         Function<Double, Long> function = new Function<>() {
             @Override
             public Long apply(Double aDouble) {
@@ -57,6 +55,8 @@ public class Main {
 
         System.out.println("--------------------------------");
 
+        //создаем FI supplier
+        //он будет генерировать случайное целове число от 0 до 100
         Supplier<Integer> supplier = new Supplier<Integer>() {
             @Override
             public Integer get() {
